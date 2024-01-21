@@ -34,6 +34,7 @@ export const Login = () => {
         }
         else
         {
+            setdata()
             alert("No data found");
         }
         
