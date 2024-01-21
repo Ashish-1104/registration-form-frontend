@@ -23,7 +23,7 @@ export const Login = () => {
         e.preventDefault();
         console.log("submit")
         console.log(user);
-        const response = await fetch('/api/auth/login', {
+        const response = await fetch('https://koka.onrender.com/api/auth/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
