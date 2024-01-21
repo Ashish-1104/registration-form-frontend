@@ -1,7 +1,6 @@
 import React from "react";
 
 export const Detail = (data) => {
-    console.log("datl", data)
     return (<>
         <div className="mt-5 bg-light border border-2">
             <div className="d-flex justify-content-center mt-5"><h1 classname="">Detail</h1></div>
