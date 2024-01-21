@@ -5,16 +5,16 @@ import { Detail } from "./Detail"
 export const Reg = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState({
-        username: "1",
-        firstname: "1",
-        middlename: "1",
-        lastname: "1",
-        email: "v@v.com",
-        roll: "1",
-        course: "1",
-        branch: "1",
-        desc: "1",
-        password: "1"
+        username: "",
+        firstname: "",
+        middlename: "",
+        lastname: "",
+        email: "",
+        roll: "",
+        course: "",
+        branch: "",
+        desc: "",
+        password: ""
     });
     
     const [data, setData] = useState();
