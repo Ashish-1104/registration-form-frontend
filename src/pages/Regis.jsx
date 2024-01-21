@@ -31,6 +31,7 @@ export const Reg = () => {
     
 
     const handleSubmit = async (e) => {
+        
         e.preventDefault();
         const response = await fetch('https://koka.onrender.com/api/auth/register', {
             method: "POST",
@@ -56,8 +57,10 @@ export const Reg = () => {
             alert("Data added")
             const data = await response.json();
             setData(data)
-            
-   
+        }
+        else{
+            setData();
+            alert("Already Registered")
         }
     }
     return (<>
