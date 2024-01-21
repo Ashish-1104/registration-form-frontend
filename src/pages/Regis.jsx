@@ -5,16 +5,16 @@ import { Detail } from "./Detail"
 export const Reg = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState({
-        username: "",
-        firstname: "",
-        middlename: "",
-        lastname: "",
-        email: "v",
-        roll: "",
-        course: "",
-        branch: "",
-        desc: "",
-        password: ""
+        username: "1",
+        firstname: "1",
+        middlename: "1",
+        lastname: "1",
+        email: "v@v.com",
+        roll: "1",
+        course: "1",
+        branch: "1",
+        desc: "1",
+        password: "1"
     });
     
     const [data, setData] = useState();
@@ -32,7 +32,7 @@ export const Reg = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('https://koka.onrender.com/api/auth/', {
+        const response = await fetch('https://koka.onrender.com/api/auth/register', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
