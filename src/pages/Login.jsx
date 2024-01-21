@@ -27,8 +27,16 @@ export const Login = () => {
             },
             body: JSON.stringify(user)
         })
-        const data = await response.json();
-        setData(data)
+        if(response.ok)
+        {
+            const data = await response.json();
+            setData(data)
+        }
+        else
+        {
+            alert("No data found");
+        }
+        
     }
     return (
         <>
