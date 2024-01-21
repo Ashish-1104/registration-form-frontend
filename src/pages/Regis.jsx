@@ -5,17 +5,18 @@ import { Detail } from "./Detail"
 export const Reg = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState({
-        username: "vishal",
-        firstname: "vishal",
-        middlename: "patel",
-        lastname: "singh",
-        email: "vishu@gmail",
-        roll: "1",
-        course: "btech",
-        branch: "cse",
-        desc: "student",
-        password: "12345"
+        username: "",
+        firstname: "",
+        middlename: "",
+        lastname: "",
+        email: "v",
+        roll: "",
+        course: "",
+        branch: "",
+        desc: "",
+        password: ""
     });
+    
     const [data, setData] = useState();
     const handleInput = (e) => {
         let name = e.target.name;
@@ -31,8 +32,6 @@ export const Reg = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("submit")
-        console.log(user);
         const response = await fetch('/api/auth/register', {
             method: "POST",
             headers: {
@@ -82,9 +81,6 @@ export const Reg = () => {
 
                         <label htmlfor="lastname" className="form-label mt-3">Last Name</label>
                         <input type="text" className="form-control fs-5" name="lastname" placeholder="Enter last name" value={user.lastname} onChange={handleInput} required />
-
-                        {/* <label htmlfor="roll"className="form-label mt-3">Enter Roll NO</label>
-                <input type="text" name="roll" className="form-control" placeholder="Enter roll no." value={user.firstname} onChange={handleInput} required /> */}
 
                         <label htmlfor="email" className="form-label mt-3">Email</label>
                         <input type="email" className="form-control fs-5" name="email" placeholder="Enter email" value={user.email} onChange={handleInput} required />
