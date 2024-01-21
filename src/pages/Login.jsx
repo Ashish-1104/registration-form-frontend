@@ -34,7 +34,8 @@ export const Login = () => {
         }
         else
         {
-            setData();
+           await setData({});
+            alert("Data not found")
         }
         
     }
@@ -62,10 +63,7 @@ export const Login = () => {
                 </main>
             </section>
 
-            {data && <Detail res={data} 
-                if(!data)
-                    alert("No data found");
-            />}
+            {data && <Detail res={data} />}
 
         </>
     );
