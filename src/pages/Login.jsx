@@ -6,6 +6,7 @@ export const Login = () => {
         email: "",
         password: ""
     });
+    const [load,setLoad]=useState(false);
     const [data, setData] = useState();
 
     const handleInput = (e) => {
@@ -20,6 +21,7 @@ export const Login = () => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoad(false);
         const response = await fetch('https://koka.onrender.com/api/auth/login', {
             method: "POST",
             headers: {
@@ -30,11 +32,12 @@ export const Login = () => {
         if(response.ok)
         {
             const data = await response.json();
-            setData(data)
+            setData(data);
+            setLoad(true);
         }
         else
         {
-           await setData({});
+            setLoad(false);
             alert("Data not found")
         }
         
@@ -63,7 +66,7 @@ export const Login = () => {
                 </main>
             </section>
 
-            {data && <Detail res={data} />}
+            {load && <Detail res={data} />}
 
         </>
     );
