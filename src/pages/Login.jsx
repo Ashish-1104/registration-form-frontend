@@ -34,8 +34,7 @@ export const Login = () => {
         }
         else
         {
-            setData()
-            alert("No data found");
+            setData();
         }
         
     }
@@ -63,7 +62,10 @@ export const Login = () => {
                 </main>
             </section>
 
-            {data && <Detail res={data} />}
+            {data && <Detail res={data} 
+                if(!data)
+                    alert("No data found");
+            />}
 
         </>
     );
