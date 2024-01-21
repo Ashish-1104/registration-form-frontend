@@ -39,9 +39,8 @@ export const Reg = () => {
             },
             body: JSON.stringify(user)
         })
-
-        console.log(response);
         if (response.ok) {
+            
             setUser({
                 username: "",
                 firstname: "",
@@ -54,6 +53,7 @@ export const Reg = () => {
                 desc: "",
                 password: ""
             })
+            alert("Data added")
             const data = await response.json();
             setData(data)
             
