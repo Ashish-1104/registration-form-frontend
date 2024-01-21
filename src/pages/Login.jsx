@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Detail } from "./Detail"
+
 export const Login = () => {
     const [user, setUser] = useState({
         email: "",
@@ -16,13 +17,9 @@ export const Login = () => {
             [name]: value,
         });
     }
-    // useEffect(() => {
-
-    // }, [data])
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("submit")
-        console.log(user);
         const response = await fetch('https://koka.onrender.com/api/auth/login', {
             method: "POST",
             headers: {
@@ -31,8 +28,6 @@ export const Login = () => {
             body: JSON.stringify(user)
         })
         const data = await response.json();
-        console.log(response);
-        console.log(data);
         setData(data)
     }
     return (
