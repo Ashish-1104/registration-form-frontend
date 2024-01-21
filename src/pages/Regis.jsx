@@ -32,7 +32,7 @@ export const Reg = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('https://koka.onrender.com/api/auth/register', {
+        const response = await fetch('https://koka.onrender.com/api/auth/', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
